@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" href="app.component.css">
+  </head>
+
+  <div class = headerInfo>
+      <h1><img class = "logo" src= {{articles[0].nytLogoLink}}> </h1> 
+      <div class ="button"><button name="button">Eng/Esp</button></div> 
+      <p class="date">{{day}} {{today}}  {{month}}  {{year}}</p>
+  </div>
+
+  <div>
+    <body>
+    <table class="table">
+      <tr *ngFor="let article of articles">
+        
+        <td class = articleInfo>
+          <div class = "articlePubDate">
+            {{article.pubDate}}
+          </div>
+
+          <div class = "articleTitle">
+            <a href= {{article.articleLink}}>{{article.title}} </a> 
+          </div> 
+
+          <div class = "articleDescription">
+            <a href= {{article.articleLink}}> {{article.description}} </a>
+          </div>
+
+          <div class = "articleAuthor">
+              By: {{article.author}}
+          </div>
+        </td>
+        
+        <td class = "image">
+          <a href= {{article.articleLink}}> <img src= {{article.imageLink}}> </a>
+        </td>
+      </tr>
+    </table>
+  </body>
+  <button class="button button1">Green</button>
+<button class="button button2">Blue</button>
+  </div>
+  </html>
+<router-outlet></router-outlet>
+
